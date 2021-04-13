@@ -10,8 +10,13 @@ def hello(name, country='Finland'):
 	print(f'Hello {name}, how are things in {country}?')
 	
 def spell(word):
-    for i in word:
-        print(i, end='.')
+    
+    for i in range(len(word)):
+        if i < len(word) -1:
+            print(word[i], end='.')
+        else:
+            print(word[i],end='')
+            
     print("\n")
     	
 def relative_path(subjects):
