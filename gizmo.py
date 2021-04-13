@@ -15,9 +15,18 @@ class Gizmo:
     def speak(self):
         print(f'{self.name}')
     
-    def multiplication_table(self):
+    def multiplication_table(self, zero_out_multiples = None):
         a = np.arange(1,13)
-        return np.outer(a,a)
+        mm = np.outer(a,a)
+        if isinstance(zero_out_multiples, int):
+            for i in range(1,13):
+                if i%zero_out_multiples == 0:
+                    mm[(i-1),:] = 0
+                    mm[:,(i-1)] = 0
+    
+        return mm
+            
+    
 
 def hello(name, country='Finland'):
 	print(f'Hello {name}, how are things in {country}?')
