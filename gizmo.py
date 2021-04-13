@@ -6,6 +6,19 @@ Created on Mon Apr 13 12:26:42 2021
 @author: arsii
 """
 
+import numpy as np
+
+class Gizmo:
+    def __init__(self,name):
+        self.name = name
+        
+    def speak(self):
+        print(f'{self.name}')
+    
+    def multiplication_table(self):
+        a = np.arange(1,13)
+        return np.outer(a,a)
+
 def hello(name, country='Finland'):
 	print(f'Hello {name}, how are things in {country}?')
 	
